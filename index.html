@@ -11,15 +11,16 @@
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blogs">Blogs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
   <main id="home">
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blogs">Blogs</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+
     <section class="home">
       <div class="top">
         <div class="logo">
@@ -32,9 +33,9 @@
         </div>
       </div>
       <div class="socials">
-        <a href="https://github.com/ashutosh-singh9"><i class="ri-github-fill"></i></a>
-        <a href="https://www.linkedin.com/in/ashutosh-singh-9"><i class="ri-linkedin-fill"></i></a>
-        <a href="https://twitter.com/ashudotdev"><i class="ri-twitter-fill"></i></a>
+        <a target="_blank" href="https://github.com/ashutosh-singh9"><i class="ri-github-fill"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/ashutosh-singh-9"><i class="ri-linkedin-fill"></i></a>
+        <a target="_blank" href="https://twitter.com/ashudotdev"><i class="ri-twitter-fill"></i></a>
       </div>
     </section>
     <section id="projects" class="projects">
@@ -100,13 +101,46 @@
             <!-- <button>Case Study</button> -->
           </div>
         </div>
-        
+
+        <div class="more-par">
+          <button class="more">View More Projects</button>
+        </div>
+
         <!-- Add more projects as needed -->
       </div>
     </section>
     <section id="blogs" class="blogs">
-      
+      <h2>Blogs</h2>
+      <div class="blog-list">
+        <div class="blog-item">
+          <div class="blog-text">
+            <h3>Getting Started with React</h3>
+            <span class="date">March 10, 2026</span>
+            <p>An introduction to React and its core concepts for beginners.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="blog-item">
+          <div class="blog-text">
+            <h3>Building Modern Web Apps with Vite</h3>
+            <span class="date">March 5, 2026</span>
+            <p>Learn how to use Vite for fast development and optimized builds.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="blog-item">
+          <div class="blog-text">
+            <h3>Understanding CSS Grid and Flexbox</h3>
+            <span class="date">February 28, 2026</span>
+            <p>A comprehensive guide to modern CSS layout techniques.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+      </div>
     </section>
+    <div class="more-par">
+      <button class="more">View More Blogs</button>
+    </div>
   </main>
 </body>
 

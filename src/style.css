@@ -1,14 +1,21 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif; 
+  font-family: "Arial", sans-serif;
 }
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f4f4f4d4;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 nav ul {
   list-style: none;
@@ -23,22 +30,34 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 nav ul li a:hover {
-  color: #007BFF;
-} 
+  color: #007bff;
+}
 
 .home img {
   border-radius: 30%;
   height: 200px;
 }
 
-body{
+body {
+  margin: 0;
+  height: 100vh;
+
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 8px
+  );
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
 }
-main{
+main {
   max-width: 800px;
   margin: auto;
+  padding: 20px;
+  padding-top: 80px;
 }
 
 .home {
@@ -49,10 +68,10 @@ main{
   font-size: 36px;
   margin-bottom: 20px;
 }
-.home p {       
+.home p {
   font-size: 18px;
   color: #666;
-} 
+}
 
 .socials {
   display: flex;
@@ -63,13 +82,13 @@ main{
 }
 .socials a {
   text-decoration: none;
-  color: #333;  
-} 
+  color: #333;
+}
 .socials a:hover {
-  color: #007BFF;
+  color: #007bff;
 }
 
-.projects{
+.projects {
   padding: 50px 20px;
 }
 .projects h2 {
@@ -79,14 +98,14 @@ main{
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; 
+  gap: 20px;
 }
 .project-item {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  flex: 1 1 calc(50% - 20px); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 20px);
 }
 
 .project-item img {
@@ -96,25 +115,25 @@ main{
   margin-bottom: 15px;
 }
 .project-item h3 {
-  font-size: 22px;    
+  font-size: 22px;
   /* margin-bottom: 10px; */
 }
 .project-item .duration {
   display: block;
   font-size: 14px;
   color: #999;
-  line-height: .8;
+  line-height: 0.8;
   margin-bottom: 10px;
 }
 
 .project-item p {
   color: #666;
-}   
+}
 
-.project-item .tags{
+.project-item .tags {
   margin-top: 10px;
   display: inline-block;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: #fff;
   padding: 5px 10px;
   border-radius: 4px;
@@ -129,7 +148,7 @@ main{
 .project-item button {
   margin-top: 15px;
   padding: 10px 15px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -138,8 +157,105 @@ main{
 .project-item button:hover {
   background-color: #0056b3;
 }
-hr{
+hr {
   margin: 10px 0;
   border: none;
   border-top: 1px solid #ccc;
+}
+
+.blogs {
+  padding: 50px 20px;
+}
+.blogs h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.blog-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 20px);
+}
+
+.blog-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.blog-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.blog-item .date {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.blog-item p {
+  color: #666;
+}
+
+.blog-item button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.blog-item button:hover {
+  background-color: #0056b3;
+}
+
+.more-par {
+  text-align: center;
+  margin: 15px 0;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* background-color: red; */
+  width: 100%;
+}
+
+.more {
+  /* align-items: center; */
+  text-align: center;
+  padding: 12px 24px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.more:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (max-width: 810px) {
+  .blog-item {
+    flex: 1 1 100%;
+  }
+  .project-item {
+    flex: 1 1 100%;
+  }
+  .project-item:nth-last-child(1),
+  .project-item:nth-last-child(2) {
+    display: none;
+  }
 }
