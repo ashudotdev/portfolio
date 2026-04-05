@@ -33,8 +33,8 @@
         </div>
       </div>
       <div class="socials">
-        <a target="_blank" href="https://github.com/ashutosh-singh9"><i class="ri-github-fill"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/ashutosh-singh9/"><i class="ri-linkedin-fill"></i></a>
+        <a target="_blank" href="https://github.com/ashudotdev"><i class="ri-github-fill"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/ashudotdev/"><i class="ri-linkedin-fill"></i></a>
         <a target="_blank" href="https://twitter.com/ashudotdev"><i class="ri-twitter-fill"></i></a>
       </div>
     </section>
@@ -42,67 +42,67 @@
       <h2>Projects</h2>
       <div class="project-list">
         <div class="project-item">
-          <img src="./src/assets/cursor-clone.png" alt="Project 1" class="project-image">
+          <img src="./src/assets/monster.png" alt="Project 1" class="project-image">
           <div class="project-text">
-            <h3>Cursor Clone</h3>
-            <span class="duration">2 feb 2026 - 7 feb 2026</span>
-            <p>Description of project 1.</p>
+            <h3>Monster Website</h3>
+            <span class="duration">4 march 2026 - 16 march 2026</span>
+            <p>An immersive, high-energy single-page web experience inspired by Monster Energy, built using HTML, CSS,
+              and Vanilla JavaScript. This project focuses on dynamic animations, interactive elements, and a visually
+              intense design system, featuring GSAP-powered scroll effects, real-time theme switching, and a custom
+              mini-game to create an engaging, “alive” user experience. <button class="read-more-btn">Read More</button>
+            </p>
             <h4>Technologies</h4>
             <span class="tags">HTML</span>
             <span class="tags">CSS</span>
+            <span class="tags">JavaScript</span>
+            <span class="tags">GSAP</span>
             <hr>
-            <button>View Live</button>
-            <button>Source Code</button>
+            <a href="https://monster.ashu.fun/" target="_blank">View Live</a>
+            <a href="https://github.com/ashudotdev/MonsterEnergyDrink-CodeCanvas" target="_blank">Source Code</a>
             <!-- <button>Case Study</button> -->
           </div>
         </div>
         <div class="project-item">
-          <img src="./src/assets/cursor-clone.png" alt="Project 1" class="project-image">
+          <img src="./src/assets/cursor-clone.png" alt="Project 2" class="project-image">
           <div class="project-text">
             <h3>Cursor Clone</h3>
             <span class="duration">2 feb 2026 - 7 feb 2026</span>
-            <p>Description of project 1.</p>
+            <p>A high-fidelity, desktop-first clone of the Cursor landing page built using pure HTML and CSS. This
+              project focuses on accurately replicating layout, typography, spacing, and visual hierarchy while
+              maintaining clean, semantic code without using any frameworks or JavaScript. <button
+                class="read-more-btn">Read More</button></p>
             <h4>Technologies</h4>
             <span class="tags">HTML</span>
             <span class="tags">CSS</span>
             <hr>
-            <button>View Live</button>
-            <button>Source Code</button>
+            <a href="https://cursor.ashu.fun/" target="_blank">View Live</a>
+            <a href="https://github.com/ashudotdev/Cursor-clone" target="_blank">Source Code</a>
             <!-- <button>Case Study</button> -->
           </div>
         </div>
         <div class="project-item">
-          <img src="./src/assets/cursor-clone.png" alt="Project 1" class="project-image">
+          <img src="./src/assets/ashtech.png" alt="Project 1" class="project-image">
           <div class="project-text">
-            <h3>Cursor Clone</h3>
-            <span class="duration">2 feb 2026 - 7 feb 2026</span>
-            <p>Description of project 1.</p>
+            <h3>Ashtech</h3>
+            <span class="duration">12 feb 2026 - 19 feb 2026</span>
+            <p>A visually engaging bike showcase project built using HTML and CSS, primarily focused on practicing GSAP
+              animations. The project emphasizes smooth transitions, scroll-based effects, and immersive motion design
+              to create a dynamic and modern presentation of high-performance bikes. <button class="read-more-btn">Read
+                More</button></p>
             <h4>Technologies</h4>
             <span class="tags">HTML</span>
             <span class="tags">CSS</span>
+            <span class="tags">JavaScript</span>
+            <span class="tags">GSAP</span>
             <hr>
-            <button>View Live</button>
-            <button>Source Code</button>
-            <!-- <button>Case Study</button> -->
-          </div>
-        </div>
-        <div class="project-item">
-          <img src="./src/assets/cursor-clone.png" alt="Project 1" class="project-image">
-          <div class="project-text">
-            <h3>Cursor Clone</h3>
-            <span class="duration">2 feb 2026 - 7 feb 2026</span>
-            <p>Description of project 1.</p>
-            <h4>Technologies</h4>
-            <span class="tags">HTML</span>
-            <span class="tags">CSS</span>
-            <hr>
-            <button>View Live</button>
-            <button>Source Code</button>
+            <a href="https://ashtech.ashu.fun/" target="_blank">View Live</a>
+            <a href="https://github.com/ashu-09x/bike-showoff" target="_blank">Source Code</a>
             <!-- <button>Case Study</button> -->
           </div>
         </div>
 
-        <div class="more-par">
+
+        <div class="more-par" hidden>
           <button class="more">View More Projects</button>
         </div>
 
@@ -142,6 +142,49 @@
       <button class="more">View More Blogs</button>
     </div>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const descriptions = document.querySelectorAll('.project-item p');
+
+      descriptions.forEach(p => {
+        const btn = p.querySelector('.read-more-btn');
+        if (!btn) return;
+
+        p.removeChild(btn);
+        const fullText = p.textContent.trim();
+
+        // Use the first sentence as the compact text for a clean layout
+        let breakPoint = fullText.indexOf('.');
+        if (breakPoint === -1 || breakPoint > 180) {
+          breakPoint = 120;
+        }
+
+        const shortText = fullText.substring(0, breakPoint + 1);
+
+        // Render the compact vs full elements correctly
+        const textSpan = document.createElement('span');
+        textSpan.textContent = shortText + '... ';
+
+        p.textContent = '';
+        p.appendChild(textSpan);
+        p.appendChild(btn);
+
+        let isExpanded = false;
+
+        btn.addEventListener('click', () => {
+          isExpanded = !isExpanded;
+          if (isExpanded) {
+            textSpan.textContent = fullText + ' ';
+            btn.textContent = 'Read Less';
+          } else {
+            textSpan.textContent = shortText + '... ';
+            btn.textContent = 'Read More';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
