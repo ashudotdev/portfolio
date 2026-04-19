@@ -1,3 +1,33 @@
 h1{
-    padding-left: 25px;
+    /* padding-left: 25px; */
+    text-align: center;
+}
+
+@media (max-width: 810px) {
+  .blog-item {
+    flex: 1 1 100%;
+  }
+
+  .project-item {
+    flex-direction: column;
+  }
+
+  .project-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-item:nth-last-child(1),
+  .project-item:nth-last-child(2) {
+    display: block;
+  }
+}
+
+.blogs{
+  margin-top: 20px;
+}
+
+.heading{
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
