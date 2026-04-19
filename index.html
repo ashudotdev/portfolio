@@ -14,7 +14,7 @@
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="./src/projects.html">Projects</a></li>
       <li><a href="#blogs">Blogs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -41,6 +41,35 @@
     <section id="projects" class="projects">
       <h2>Projects</h2>
       <div class="project-list">
+        <div class="project-item">
+          <img src="./src/assets/bms.png" alt="Project 1" class="project-image">
+          <div class="project-text">
+            <h3>Ticket Booking System-BMS</h3>
+            <span class="duration">11 april 2026 - 15 april 2026</span>
+            <p>
+              A full-stack movie ticket booking platform built for a hackathon using modern web
+              technologies. This project focuses on solving real-world seat booking challenges with secure
+              JWT authentication, live seat availability updates, hold-and-confirm booking flow, booking
+              history management, and cancellation support. Designed with a smooth user interface and
+              scalable backend architecture to simulate a production-ready cinema booking experience.
+              <button class="read-more-btn">Read More</button>
+            </p>
+
+            <h4>Technologies</h4>
+            <span class="tags">HTML</span>
+            <span class="tags">CSS</span>
+            <span class="tags">JavaScript</span>
+            <span class="tags">Node.js</span>
+            <span class="tags">Express.js</span>
+            <span class="tags">PostgreSQL</span>
+            <span class="tags">JWT</span>
+
+            <hr>
+
+            <a href="https://bms.ashu.fun/" target="_blank">View Live</a>
+            <a href="https://github.com/ashudotdev/book-my-ticket-hackathon" target="_blank">Source Code</a>
+          </div>
+        </div>
         <div class="project-item">
           <img src="./src/assets/monster.png" alt="Project 1" class="project-image">
           <div class="project-text">
@@ -80,30 +109,10 @@
             <!-- <button>Case Study</button> -->
           </div>
         </div>
-        <div class="project-item">
-          <img src="./src/assets/ashtech.png" alt="Project 1" class="project-image">
-          <div class="project-text">
-            <h3>Ashtech</h3>
-            <span class="duration">12 feb 2026 - 19 feb 2026</span>
-            <p>A visually engaging bike showcase project built using HTML and CSS, primarily focused on practicing GSAP
-              animations. The project emphasizes smooth transitions, scroll-based effects, and immersive motion design
-              to create a dynamic and modern presentation of high-performance bikes. <button class="read-more-btn">Read
-                More</button></p>
-            <h4>Technologies</h4>
-            <span class="tags">HTML</span>
-            <span class="tags">CSS</span>
-            <span class="tags">JavaScript</span>
-            <span class="tags">GSAP</span>
-            <hr>
-            <a href="https://ashtech.ashu.fun/" target="_blank">View Live</a>
-            <a href="https://github.com/ashu-09x/bike-showoff" target="_blank">Source Code</a>
-            <!-- <button>Case Study</button> -->
-          </div>
-        </div>
 
 
-        <div class="more-par" hidden>
-          <button class="more">View More Projects</button>
+        <div class="more-par">
+          <a class="more" href="./src/projects.html">View More Projects</a>
         </div>
 
         <!-- Add more projects as needed -->
@@ -139,52 +148,11 @@
       </div>
     </section>
     <div class="more-par">
-      <button class="more">View More Blogs</button>
+      <a class="more" href="blogs.html">View More Blogs</a>
     </div>
   </main>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const descriptions = document.querySelectorAll('.project-item p');
-
-      descriptions.forEach(p => {
-        const btn = p.querySelector('.read-more-btn');
-        if (!btn) return;
-
-        p.removeChild(btn);
-        const fullText = p.textContent.trim();
-
-        // Use the first sentence as the compact text for a clean layout
-        let breakPoint = fullText.indexOf('.');
-        if (breakPoint === -1 || breakPoint > 180) {
-          breakPoint = 120;
-        }
-
-        const shortText = fullText.substring(0, breakPoint + 1);
-
-        // Render the compact vs full elements correctly
-        const textSpan = document.createElement('span');
-        textSpan.textContent = shortText + '... ';
-
-        p.textContent = '';
-        p.appendChild(textSpan);
-        p.appendChild(btn);
-
-        let isExpanded = false;
-
-        btn.addEventListener('click', () => {
-          isExpanded = !isExpanded;
-          if (isExpanded) {
-            textSpan.textContent = fullText + ' ';
-            btn.textContent = 'Read Less';
-          } else {
-            textSpan.textContent = shortText + '... ';
-            btn.textContent = 'Read More';
-          }
-        });
-      });
-    });
-  </script>
+  <script src="./src/readmore.js"></script>
 </body>
 
 </html>
